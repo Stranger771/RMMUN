@@ -1,0 +1,343 @@
+:root {
+  --color-primary: #5ec576;
+  --color-secondary: #ffcb03;
+  --color-tertiary: #ff585f;
+  --color-primary-darker: #4bbb7d;
+  --color-secondary-darker: #ffbb00;
+  --color-tertiary-darker: #fd424b;
+  --color-primary-opacity: #5ec5763a;
+  --color-secondary-opacity: #ffcd0331;
+  --color-tertiary-opacity: #ff58602d;
+  --gradient-primary: linear-gradient(to top left, #39b385, #9be15d);
+  --gradient-secondary: linear-gradient(to top left, #ffb003, #ffcb03);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+body {
+  font-family: "Nunito", system-ui;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+html {
+  /* font-size: 62.5%; */
+  box-sizing: border-box;
+}
+.background-img img {
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  object-fit: cover;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -100;
+}
+.cross-icon {
+  font-size: 30px;
+  color: #ffff;
+  display: none;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  transform: rotateZ(90deg);
+  transition: all 0.5s;
+}
+.bars-icon {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  font-size: 30px;
+  color: #ffff;
+  display: none;
+  z-index: 2;
+  transition: all 0.5s;
+}
+.nav-bar {
+  font-family: "Oswald", system-ui;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #212121;
+  position: fixed;
+  box-shadow: 0 2px 5px rgba(255, 255, 255, 0.15);
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  padding: 0 1.5rem;
+  /* background-color: grey; */
+  z-index: 101;
+}
+.logo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #ffff;
+}
+.nav-bar .nav-logo {
+  height: 80px;
+  width: 80px;
+}
+.nav-lists {
+  width: 30%;
+}
+.nav-lists ul {
+  display: flex;
+  justify-content: space-between;
+}
+.nav-lists ul li,
+a {
+  text-decoration: none;
+  list-style: none;
+  color: #ffff;
+}
+.nav-item i {
+  margin-right: 10px;
+}
+.crr {
+  color: red;
+  font-weight: 800;
+  font-style: italic;
+}
+/* committee */
+.committees-content {
+  text-align: center;
+  color: #ffff;
+  width: 60%;
+  margin: 40px auto;
+  padding: 50px;
+  letter-spacing: 3px;
+  border-bottom: 1px solid #ddd;
+}
+.committees-content h1 {
+  margin-bottom: 20px;
+}
+.committee-items {
+  width: 50%;
+  margin: auto;
+  margin-bottom: 100px;
+  /* border-bottom: 1px solid rgba(255, 255, 255, 0.200000003); */
+  padding: 40px;
+  /* background-color: rgba(253, 249, 255, 0.2); */
+  border-radius: 5px;
+  /* box-shadow: 0.5px 0.5px 4px 0.2px black; */
+  color: #ffff;
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  min-height: 250px;
+}
+
+.committee-items::before {
+  position: absolute;
+  content: "";
+  width: 50px;
+  height: 50px;
+  top: 0;
+  right: 0;
+  border-top: 5px solid black;
+  border-right: 5px solid black;
+}
+
+.committee-items::after {
+  position: absolute;
+  content: "";
+  width: 50px;
+  height: 50px;
+  bottom: 0;
+  left: 0;
+  /* transform: translate(50%,50%); */
+  border-bottom: 5px solid black;
+  border-left: 5px solid black;
+}
+.committee-items h1 {
+  border-right: 1px solid #ffff;
+  width: fit-content;
+  padding: 10px;
+  margin-right: 20px;
+}
+/* ecos uncstd */
+.committee-ecos {
+  height: 300px;
+}
+/* SC*/
+
+.committee-ga h1 {
+  border-right: none;
+  margin-right: 0px;
+  margin-left: 20px;
+  border-left: 1px solid #ffff;
+}
+.committee-ga .sub-content {
+  text-align: right;
+}
+/* HRC */
+
+.committee-hrc h1 {
+  border-right: none;
+  margin-right: 0px;
+  margin-left: 20px;
+  border-left: 1px solid #ffff;
+}
+.committee-hrc .sub-content {
+  text-align: right;
+}
+
+.sub-content h2 {
+  margin-bottom: 20px;
+}
+
+.committee-items button {
+  width: 30%;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px;
+  border: 1px solid #212121;
+  background-color: #212121;
+  color: #ffff;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 3px;
+  transition: all 0.3s;
+}
+.committee-items button:hover {
+  background-color: transparent;
+  border: 1px solid #ffff;
+  color: #ffff;
+}
+.overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: black;
+  opacity: 0;
+  display: none;
+  transition: all 0.3s;
+}
+@media screen and (max-width: 1400px) {
+  .nav-lists {
+    width: 45%;
+    font-size: 1.3rem;
+  }
+  .logo h3 {
+    font-size: 1.3rem;
+  }
+  .nav-bar .nav-logo {
+    height: 100px;
+    width: 100px;
+  }
+  #committees {
+    margin-top: 100px;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .cross-icon {
+    font-size: 30px;
+    color: #ffff;
+    display: block;
+  }
+  .bars-icon {
+    display: block;
+  }
+  .nav-bar {
+    width: 0;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    margin: 0;
+    height: 100vh;
+    padding: 0px 0px;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0px 2px 8px 2px grey;
+    z-index: 5;
+    background-color: #212121;
+    transition: all 0.3s ease-in;
+  }
+  .nav-lists ul {
+    display: flex;
+    height: 70%;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .nav-lists {
+    width: 100%;
+    height: 20vh;
+  }
+  .logo {
+    flex-direction: column;
+    text-align: center;
+  }
+  .committee-items {
+    width: 70%;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .committee-ecos {
+    height: 350px;
+  }
+}
+@media screen and (max-width: 950px) {
+  .icons div {
+    width: 30%;
+    height: 200px;
+  }
+}
+@media screen and (max-width: 640px) {
+  .committee-items {
+    flex-direction: column;
+    width: 80%;
+    justify-content: center;
+    height: 440px;
+  }
+  .committee-items h1 {
+    border: none;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ffff;
+  }
+  .committee-ga,
+  .committee-hrc {
+    flex-direction: column-reverse;
+  }
+  .committee-ga .sub-content,
+  .committee-hrc .sub-content {
+    text-align: left;
+  }
+}
+@media screen and (max-width: 560px) {
+  .committees-content {
+    width: 80%;
+  }
+  .committees-content p {
+    text-align: left;
+  }
+}
+@media screen and (max-width: 380px) {
+  committee-items {
+    width: 100%;
+  }
+  .committees-content {
+    width: 90%;
+  }
+  .committees-content p {
+    text-align: center;
+    font-size: small;
+  }
+  .committee-ecos {
+    height: 450px;
+  }
+}
