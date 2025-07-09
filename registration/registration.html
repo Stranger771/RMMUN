@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RMMUN Registration</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Fredoka:wght@300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito&family=Oswald:wght@200..700&family=Protest+Guerrilla&family=Protest+Revolution&family=Protest+Riot&family=Raleway:ital,wght@0,100..900;1,100..900&family=Single+Day&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Link to your external CSS if needed -->
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: inherit;
+      }
+
+      html {
+        /* font-size: 62.5%; */
+        box-sizing: border-box;
+      }
+      .cross-icon {
+        font-size: 30px;
+        color: #ffff;
+        display: none;
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        transform: rotateZ(90deg);
+        transition: all 0.5s;
+      }
+      .bars-icon {
+        position: fixed;
+        top: 10px;
+        left: 10px;
+        font-size: 30px;
+        color: #ffff;
+        display: none;
+        z-index: 2;
+        transition: all 0.5s;
+      }
+      .nav-bar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #212121;
+        position: fixed;
+        box-shadow: 0 2px 5px rgba(255, 255, 255, 0.15);
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        padding: 0 1.5rem;
+        /* background-color: grey; */
+        z-index: 101;
+      }
+      .logo {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: #ffff;
+      }
+      .nav-bar .nav-logo {
+        height: 80px;
+        width: 80px;
+      }
+      .nav-lists {
+        width: 30%;
+      }
+      .nav-lists ul {
+        display: flex;
+        justify-content: space-between;
+      }
+      .nav-lists ul li,
+      a {
+        text-decoration: none;
+        list-style: none;
+        color: #ffff;
+      }
+      .nav-item i {
+        margin-right: 10px;
+      }
+      .crr {
+        color: red;
+        font-weight: 800;
+        font-style: italic;
+      }
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f9;
+        color: #333;
+        padding: 20px;
+      }
+      .container {
+        position: relative;
+        top: 100px;
+        max-width: 800px;
+        margin: 0 auto;
+        background-color: #fff;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+      }
+      h1 {
+        text-align: center;
+        color: #b22222; /* Dark Red for headings */
+      }
+      p {
+        text-align: center;
+        font-size: 1.2em;
+        color: #555;
+      }
+      iframe {
+        width: 100%;
+        height: 800px;
+        border: none;
+      }
+      .content {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      .content h2 {
+        color: #b22222; /* Dark Red for subheadings */
+      }
+      .content p {
+        font-size: 1.1em;
+      }
+      .overlay {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        background-color: black;
+        opacity: 0;
+        display: none;
+        transition: all 0.3s;
+      }
+      @media screen and (max-width: 1400px) {
+        .nav-lists {
+          width: 45%;
+          font-size: 1.3rem;
+        }
+        .logo h3 {
+          font-size: 1.3rem;
+        }
+        .nav-bar .nav-logo {
+          height: 100px;
+          width: 100px;
+        }
+        /* #committees {
+    margin-top: 100px;
+  } */
+      }
+      @media screen and (max-width: 1000px) {
+        .cross-icon {
+          font-size: 30px;
+          color: #ffff;
+          display: block;
+        }
+        .bars-icon {
+          display: block;
+        }
+        .nav-bar {
+          width: 0;
+          overflow: hidden;
+          position: fixed;
+          top: 0;
+          left: 0;
+          bottom: 0;
+          margin: 0;
+          height: 100vh;
+          padding: 0px 0px;
+          flex-direction: column;
+          justify-content: space-between;
+          box-shadow: 0px 2px 8px 2px grey;
+          z-index: 5;
+          background-color: #212121;
+          transition: all 0.3s ease-in;
+        }
+        .nav-lists ul {
+          display: flex;
+          height: 70%;
+          flex-direction: column;
+          justify-content: space-between;
+        }
+        .nav-lists {
+          width: 100%;
+          height: 20vh;
+        }
+        .logo {
+          flex-direction: column;
+          text-align: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="bars-icon">
+      <i class="fas fa-bars"></i>
+    </div>
+
+    <!-- <div class="background-img">
+        <img src="Images/asd.png" alt="" />
+      </div> -->
+    <nav class="nav-bar">
+      <div class="cross-icon">
+        <i class="fas fa-times"></i>
+      </div>
+
+      <div class="logo">
+        <img
+          class="nav-logo"
+          src="Images/Roots_MUN_Logo-Recovered.png"
+          alt=""
+        />
+        <h3>RMMUN 2024</h3>
+      </div>
+
+      <div class="nav-lists">
+        <ul>
+          <li class="nav-item">
+            <a href="../index.html"><i class="fa fa-home"></i>Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="../committees/committee.html"
+              ><i class="fas fa-users"></i>Committees</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="crr" href="#"><i class="fas fa-user-plus"></i>Register</a>
+          </li>
+          <li class="nav-item">
+            <a href="../contact/contact.html"
+              ><i class="fa fa-comments"></i>Contact Us</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container">
+      <h1>Register for RMMUN 2024</h1>
+
+      <div class="content">
+        <h2>Welcome to RMMUN</h2>
+        <p>
+          We are excited to have you join us for the upcoming RMMUN conference.
+          To secure your spot, please complete the registration form below. We
+          look forward to your participation in our six exciting committees,
+          where delegates from all over the world will come together to discuss,
+          debate, and collaborate on global issues.
+        </p>
+        <p>
+          Don’t miss this chance to be a part of a dynamic and impactful event!
+        </p>
+      </div>
+
+      <!-- Embed Google Form here -->
+      <iframe
+        src="https://docs.google.com/forms/d/e/1FAIpQLSc_sJwWFtLdsaceZW6JNKqKziZ3t7GqrxxpCXAa9TguGmzRVw/viewform?embedded=true"
+        width="640"
+        height="1503"
+        frameborder="0"
+        marginheight="0"
+        marginwidth="0"
+        >Loading…</iframe
+      >
+    </div>
+    <div class="overlay"></div>
+    <script src="registration.js"></script>
+  </body>
+</html>
